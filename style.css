@@ -8,11 +8,11 @@ body {
       align-items: center;
       height: 100vh; 
       margin: 0;
-      font-family: 'D2Coding', sans-serif;
+      font-family: 'Roboto', sans-serif;
 }
 
 @font-face {
-  font-family: 'D2Coding';
+  font-family: 'Roboto';
   src: url('fonts.ttf') format('truetype');
 }
 
@@ -63,10 +63,13 @@ details {
 color: #fff;
 }
 
-md-fab {
+md-fab { 
   position: fixed;
   bottom : 24px;
   right: 24px;
   z-index: 1000;
 }
 
+.small {
+  font-size: 10px;
+}
