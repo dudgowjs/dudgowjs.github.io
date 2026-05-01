@@ -8,11 +8,11 @@ body {
       align-items: center;
       height: 100vh; 
       margin: 0;
-      font-family: 'Roboto', sans-serif;
+      font-family: 'PixelifySans', sans-serif;
 }
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'PixelifySans';
   src: url('fonts.ttf') format('truetype');
 }
 
@@ -73,3 +73,4 @@ md-fab {
 .small {
   font-size: 10px;
 }
+
