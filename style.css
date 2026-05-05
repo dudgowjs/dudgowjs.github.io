@@ -8,11 +8,11 @@ body {
       align-items: center;
       height: 100vh; 
       margin: 0;
-      font-family: 'PixelifySans', sans-serif;
+      font-family: 'NanumGothicBold', sans-serif;
 }
 
 @font-face {
-  font-family: 'PixelifySans';
+  font-family: 'NanumGothicBold';
   src: url('fonts.ttf') format('truetype');
 }
 
@@ -59,7 +59,11 @@ h3 {
   color: #fff;
 }
 
-details {
+.banks {
+  color: #FFF201;
+}
+
+summary {
 color: #fff;
 }
 
@@ -74,3 +78,7 @@ md-fab {
   font-size: 10px;
 }
 
+.kb{
+  background-color: #2a2a2a;
+  border-radius: 10px;
+}
