@@ -5,224 +5,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>dudgowjs</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <script type="importmap">
-    {
-      "imports": {
-        "@material/web/": "https://esm.run/@material/web/"
-      }
-    }
-  </script>
-  <script type="module">
-    import '@material/web/all.js';
-    import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
-    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-  </script>
-
-  <style>
-    :root {
-      --bg-color: #121212;
-      --card-bg: #1c1c1e;
-      --border-color: rgba(255, 255, 255, 0.15);
-      --text-color: #ffffff;
-      --text-secondary: #aaaaaa;
-      --accent-yellow: #FFF201;
-    }
     
-/* 메인 아웃라인 버튼 커스텀 (보라색 강제 제거 및 테두리/호버 추가) */
-md-outlined-button {
-  width: 100%;
-  
-  /* 버튼 기본 형태 */
-  --md-outlined-button-container-shape: 8px;
-  --md-outlined-button-container-height: 46px;
-  
-  /* [기본 상태] 글자색 흰색, 테두리 반투명 흰색 */
-  --md-outlined-button-label-text-color: #ffffff;
-  --md-outlined-button-outline-color: rgba(255, 255, 255, 0.15);
-  
-  /* [호버 상태] 글자색 흰색 유지, 테두리 더 밝게 */
-  --md-outlined-button-hover-label-text-color: #ffffff;
-  --md-outlined-button-hover-outline-color: rgba(255, 255, 255, 0.6);
-  
-  /* [포커스/클릭 상태] 보라색으로 튀는 현상 방지 */
-  --md-outlined-button-focus-label-text-color: #ffffff;
-  --md-outlined-button-focus-outline-color: rgba(255, 255, 255, 0.6);
-  --md-outlined-button-pressed-label-text-color: #ffffff;
-  --md-outlined-button-pressed-outline-color: rgba(255, 255, 255, 0.4);
-  
-  /* 버튼 내부 호버 시 감도는 기본 보라색 투명 오버레이를 흰색으로 변경 */
-  --md-outlined-button-hover-state-layer-color: rgba(255, 255, 255, 0.05);
-  --md-outlined-button-focus-state-layer-color: rgba(255, 255, 255, 0.1);
-  --md-outlined-button-pressed-state-layer-color: rgba(255, 255, 255, 0.1);
-
-  transition: all 0.2s ease;
-}
-
-/* 마우스 올렸을 때 버튼 전체 배경에 아주 미세하게 불 들어오는 효과 */
-md-outlined-button:hover {
-  background-color: rgba(255, 255, 255, 0.03);
-}
-
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'Roboto', 'NanumGothicBold', sans-serif;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .profile-box {
-      width: 100%;
-      max-width: 360px;
-      background-color: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 30px 20px;
-      text-align: center;
-    }
-
-    .profile {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid var(--border-color);
-      margin-bottom: 15px;
-    }
-
-    .txt {
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .social-group {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 25px;
-    }
-
-    .icon-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      background: transparent;
-      color: var(--text-color);
-      text-decoration: none;
-      transition: all 0.2s ease; 
-    }
-
-    .icon-btn svg {
-      width: 16px;
-      height: 16px;
-      fill: currentColor;
-    }
-
-    .icon-btn:hover {
-      border-color: rgba(255, 255, 255, 0.6);
-      background-color: rgba(255, 255, 255, 0.05); 
-    }
-
-    .button-group {
-      margin-bottom: 25px;
-    }
-
-    md-outlined-button {
-      width: 100%;
-      --md-outlined-button-container-shape: 8px;
-      --md-outlined-button-container-height: 46px;
-      --md-outlined-button-outline-color: var(--border-color);
-      --md-outlined-button-label-text-color: var(--text-color);
-      transition: all 0.2s ease;
-    }
-
-    md-outlined-button:hover {
-      --md-outlined-button-outline-color: rgba(255, 255, 255, 0.6);
-      background-color: rgba(255, 255, 255, 0.05);
-    }
-
-    .donate-box {
-      border-top: 1px solid var(--border-color);
-      padding-top: 20px;
-    }
-
-    .donate-title {
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      margin-bottom: 8px;
-      text-transform: uppercase;
-    }
-
-    .bank-info {
-      font-size: 0.9rem;
-    }
-
-    .banks {
-      color: var(--accent-yellow);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    @font-face {
-      font-family: 'NanumGothicBold';
-      src: url('fonts.ttf') format('truetype');
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 font-sans bg-cover bg-center bg-no-repeat relative before:content-[''] before:absolute before:inset-0 before:bg-black/60 before:backdrop-blur-sm" style="background-image: url('https://picsum.photos/1920/1080');">
 
-  <div class="profile-box">
+
+  <main class="relative z-10 w-full max-w-sm text-center">
     
-    <img class="profile" src="pl.png" alt="profile"/>
-    <h1 class="txt">dudgowjs</h1>
-
-    <div class="social-group">
-      <a href="https://www.youtube.com/channel/UCmnO0QvlULRFW9uSg-ADm-A" class="icon-btn" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/></svg>
-      </a>
-      <a href="https://github.com/dudgowjs" class="icon-btn" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/></svg>
-      </a>
-            <a href="https://dudgowjs.github.io/Acedroid/" class="icon-btn" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M160-400v-80h280v80H160Zm0-160v-80h440v80H160Zm0-160v-80h440v80H160Zm360 560v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T863-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"/></svg>
-</a>
-      <a href="mailto:wjsdudgo11313@gmail.com" class="icon-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg>
-      </a>
+      
+    <div class="relative w-28 h-28 mx-auto mb-5">
+      <img 
+        class="w-full h-full rounded-full object-cover border-2 border-white/80 shadow-2xl shadow-black/50" 
+        src="sand.jpg"
+        alt="pfle"
+      >
     </div>
+</main>
 
-    <div class="button-group">
-      <md-outlined-button href="https://github.com/dudgowjs/Quickexc" target="_blank">
-        Quickexc executor
-      </md-outlined-button>
+    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2 drop-shadow-md">
+      dudgowjs
+    </h1>
+
+      
+    <p class="text-neutral-200 font-medium text-sm sm:text-base mb-8 drop-shadow">
+      Know thyself.
+    </p>
+
+     
+    <div class="flex items-center justify-center gap-5">
+      
+        
+      <a 
+        href="https://www.youtube.com/@dudgowjs" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        aria-label="YouTube"
+        class="w-14 h-14 flex items-center justify-center rounded-2xl bg-black/40 border border-white/30 text-white backdrop-blur-md hover:bg-white hover:text-black hover:border-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-white/20"
+      >
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      </a>
+
+      <a 
+        href="https://github.com" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        aria-label="GitHub"
+        class="w-14 h-14 flex items-center justify-center rounded-2xl bg-black/40 border border-white/30 text-white backdrop-blur-md hover:bg-white hover:text-black hover:border-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-white/20"
+      >
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+        </svg>
+      </a>
+            <a 
+        href="https://bit.ly/45rmtxh" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        aria-label="blogspot"
+        class="w-14 h-14 flex items-center justify-center rounded-2xl bg-black/40 border border-white/30 text-white backdrop-blur-md hover:bg-white hover:text-black hover:border-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-white/20"
+      >
+<svg class="w-7 h-7 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.87,15.07L10.33,12.56L10.36,12.53C12.1,10.59 13.34,8.36 14.07,6H17V4H10V2H8V4H1V6H12.17C11.5,7.92 10.44,9.75 9,11.35C8.07,10.32 7.3,9.19 6.69,8H4.69C5.42,9.63 6.42,11.17 7.67,12.56L2.58,17.58L4,19L9,14L12.11,17.11L12.87,15.07M18.5,10H16.5L12,22H14L15.12,19H19.87L21,22H23L18.5,10M15.88,17L17.5,12.67L19.12,17H15.88Z" /></svg>
+      </a>
+
+      <a 
+        href="mailto:wjsdudgo11313@gmail.com" 
+        aria-label="Email"
+        class="w-14 h-14 flex items-center justify-center rounded-2xl bg-black/40 border border-white/30 text-white backdrop-blur-md hover:bg-white hover:text-black hover:border-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-white/20"
+      >
+        <svg class="w-7 h-7 fill-none stroke-current stroke-2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+      </a>
+
     </div>
-    
-    <div class="donate-box">
-      <h4 class="donate-title">Donate</h4>
-      <p class="banks">KakaoBank:7777037195353 <p>전*해</p></p>
-    </div>
-
-  </div>
-
+</div>
 </body>
 </html>
