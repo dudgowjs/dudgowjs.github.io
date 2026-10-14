@@ -1,3 +1,2 @@
-Noting Here. Just Site Res.
-
 [Site](https://dudgowjs.github.io)
+Made by NixTems(old dudgowjs)
